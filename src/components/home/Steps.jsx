@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TypewriterText from '../common/TypewriterText';
-import { FaFileAlt, FaHandHoldingHeart, FaCheckCircle, FaClock } from 'react-icons/fa';
-import { Ri24HoursLine } from 'react-icons/ri';
-import { MdMonitor } from 'react-icons/md';
+import { HiDocumentText, HiOutlineClock, HiInboxArrowDown, HiCheckBadge } from 'react-icons/hi2';
 
 const Steps = () => {
   const steps = [
@@ -11,35 +9,35 @@ const Steps = () => {
       id: 1,
       title: 'Enquiry Form',
       description: 'Please Fill the Enquiry Form.',
-      icon: <FaFileAlt className="text-3xl text-[#EA1273]" />,
+      icon: <HiDocumentText className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 1'
     },
     {
       id: 2,
       title: 'Response',
       description: 'Santhosam advisor gets in touch within 24 hrs.',
-      icon: <Ri24HoursLine className="text-4xl text-[#EA1273]" />,
+      icon: <HiOutlineClock className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 2'
     },
     {
       id: 3,
       title: 'Onboarding Package',
       description: "You'll receive onboarding guidelines and payment information.",
-      icon: <FaHandHoldingHeart className="text-3xl text-[#EA1273]" />,
+      icon: <HiInboxArrowDown className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 3'
     },
     {
       id: 4,
       title: 'Activated',
       description: 'Service activation is now complete.',
-      icon: <MdMonitor className="text-4xl text-[#EA1273]" />,
+      icon: <HiCheckBadge className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 4'
     }
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-8 md:py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

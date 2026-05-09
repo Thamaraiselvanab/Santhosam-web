@@ -18,7 +18,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-white text-gray-800 selection:bg-pink-50 selection:text-[#EA1273] font-sans">
       <Header />
       
-      <main className="relative overflow-x-hidden">
+      <main className="relative">
         {/* Hero Video Banner */}
         <HeroBanner />
 

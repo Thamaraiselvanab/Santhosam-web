@@ -17,34 +17,36 @@ const AboutBanner = () => {
 
       {/* Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-center px-4"
-        >
-          <span className="text-[#EA1273]">About</span>{' '}
-          <span className="inline-flex text-[#003366] italic">
-            {["U", "S"].map((letter, idx) => (
-              <motion.span
-                key={idx}
-                initial={{ opacity: 0 }}
-                animate={{ 
-                  opacity: [0, 1, 1, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  times: [0, 0.2 + (idx * 0.1), 0.8, 1],
-                  ease: "easeInOut",
-                  delay: idx * 0.3
-                }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </span>
-        </motion.h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-center"
+          >
+            <span className="text-[#EA1273]">About</span>{' '}
+            <span className="inline-flex text-[#003366] italic">
+              {["U", "S"].map((letter, idx) => (
+                <motion.span
+                  key={idx}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: [0, 1, 1, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    times: [0, 0.2 + (idx * 0.1), 0.8, 1],
+                    ease: "easeInOut",
+                    delay: idx * 0.3
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </span>
+          </motion.h1>
+        </div>
       </div>
 
       {/* Curved Bottom Edge (as seen in some modern designs) */}
