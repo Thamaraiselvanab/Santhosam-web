@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import TypewriterText from '../common/TypewriterText';
 import { FaCheck } from 'react-icons/fa';
 
 const plans = [
@@ -264,7 +265,7 @@ const TariffPlans = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-12 md:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -274,7 +275,7 @@ const TariffPlans = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#003366] mb-4 tracking-tight">
-            Tariff <span className="text-[#EA1273] italic">Plans</span>
+            Tariff <span className="text-[#EA1273] italic"><TypewriterText text="Plans" /></span>
           </h2>
           <p className="text-xl md:text-2xl font-bold text-[#EA1273] mb-4">Launching Offer</p>
           <p className="text-gray-500 text-sm font-medium max-w-xl mx-auto leading-relaxed">

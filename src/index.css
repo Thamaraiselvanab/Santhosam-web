@@ -12,9 +12,10 @@
   letter-spacing: -0.011em;
 }
 
-body {
+html, body {
   margin: 0;
   display: block;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }

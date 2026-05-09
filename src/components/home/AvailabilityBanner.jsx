@@ -4,20 +4,52 @@ import availabilityImg from '../../assets/home/24_7 available.jpeg';
 
 const AvailabilityBanner = () => {
   return (
-    <section className="py-8 bg-white overflow-hidden">
-      <div className="w-full">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-[#001B3D] flex justify-end h-[400px] md:h-[500px]"
-        >
-          <img 
-            src={availabilityImg} 
-            alt="24/7 Available" 
-            className="w-full h-full object-cover object-[75%_center] md:object-[80%_center]"
-          />
-        </motion.div>
+    <section className="bg-white overflow-hidden py-12 px-4 sm:px-8 lg:px-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row h-auto lg:h-[400px] rounded-2xl overflow-hidden shadow-xl bg-[#001B3D]">
+          {/* Content Card (Left) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex-1 bg-[#001B3D] px-12 py-8 flex flex-col items-center justify-center text-white z-10 text-center"
+          >
+            <span className="text-[#EA1273] font-semibold mb-1 block text-sm tracking-wider">
+              24/7 Availability
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black mb-3 leading-tight">
+              We Are Here for Your <br /> Home Care Needs
+            </h2>
+            <p className="text-gray-200 text-sm mb-4 leading-relaxed max-w-xl">
+              At ParentCare India, we understand the importance of having support for your loved ones. 
+              Our dedicated team is ready to assist you with consultations anytime, day or night. 
+              We are committed to ensuring that all your concerns are addressed with the utmost care and respect. 
+              Our services are designed to provide comfort and peace of mind, helping families feel secure in the care we offer. 
+              Let us be your trusted partner in home care.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button className="bg-[#EA1273] hover:bg-[#D41068] text-white px-6 py-2 rounded-md font-bold transition-all shadow-lg text-sm flex items-center justify-center">
+                Contact Us
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Image Container (Right) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-auto flex items-center justify-center overflow-hidden bg-[#001B3D]"
+          >
+            <img 
+              src={availabilityImg} 
+              alt="Professional Home Care Nurse" 
+              className="h-full w-auto object-contain"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

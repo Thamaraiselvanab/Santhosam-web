@@ -1,21 +1,31 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiChevronDown, HiBars3, HiXMark } from 'react-icons/hi2';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/Santhosham-Logo-scaled.png';
 
 const Header = () => {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', href: '#', active: true },
-    { name: 'About', href: '#' },
-    { name: 'Services', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
   ];
 
+
+
   const resourceLinks = [
-    'FAQs', 'Reviews', 'Blog', 'Events', 'Gallery', 'Refer a friend'
+    { name: 'FAQs', path: '/faq' },
+    { name: 'Reviews', path: '/reviews' },
+    { name: 'Blog', path: '#' },
+    { name: 'Events', path: '/events' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Refer a friend', path: '/refer' }
   ];
+
 
   return (
     <header className="sticky top-0 z-50 bg-[#F0F7FF] border-b border-gray-100 shadow-sm">
@@ -34,17 +44,17 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className={`text-sm font-semibold transition-colors relative pb-1 ${
-                  link.active 
+                  location.pathname === link.href 
                   ? 'text-[#EA1273] after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#EA1273]' 
                   : 'text-gray-700 hover:text-[#EA1273]'
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
 
             {/* Resources Dropdown */}
@@ -69,22 +79,44 @@ const Header = () => {
                     className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
                   >
                     {resourceLinks.map((item) => (
-                      <a
-                        key={item}
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#EA1273]"
-                      >
-                        {item}
-                      </a>
+                      item.path.startsWith('/') ? (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#EA1273]"
+                          onClick={() => setIsResourcesOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <a
+                          key={item.name}
+                          href={item.path}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#EA1273]"
+                        >
+                          {item.name}
+                        </a>
+                      )
                     ))}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <a href="#" className="text-sm font-semibold text-gray-700 hover:text-[#EA1273] transition-colors">
+            {/* Contact Link */}
+            <Link
+              to="/contact"
+              className={`text-sm font-semibold transition-colors relative pb-1 ${
+                location.pathname === '/contact' 
+                ? 'text-[#EA1273] after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#EA1273]' 
+                : 'text-gray-700 hover:text-[#EA1273]'
+              }`}
+            >
               Contact
-            </a>
+            </Link>
+
+
+
           </nav>
 
           {/* Action Buttons */}
@@ -120,34 +152,41 @@ const Header = () => {
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    link.active ? 'text-[#EA1273] bg-pink-50' : 'text-gray-700 hover:text-[#EA1273]'
+                    location.pathname === link.href ? 'text-[#EA1273] bg-pink-50' : 'text-gray-700 hover:text-[#EA1273]'
                   }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <div className="px-3 py-2 text-base font-medium text-gray-700">Resources</div>
               <div className="pl-6 space-y-1">
                 {resourceLinks.map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
-                  >
-                    {item}
-                  </a>
+                  item.path.startsWith('/') ? (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.path}
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
+                    >
+                      {item.name}
+                    </a>
+                  )
                 ))}
               </div>
-              <a
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#EA1273]"
-              >
-                Contact
-              </a>
+
               <div className="pt-4 flex flex-col space-y-2 px-3">
                 <button className="w-full px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-sm bg-[#E3F2FD]">
                   Santhosam

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TypewriterText from '../common/TypewriterText';
 
 const Services = () => {
   const services = [
@@ -18,7 +19,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +27,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-[#003366] mb-16 tracking-tight"
         >
-          Our <span className="text-[#EA1273] italic">Services</span>
+          Our <span className="text-[#EA1273] italic"><TypewriterText text="Services" /></span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

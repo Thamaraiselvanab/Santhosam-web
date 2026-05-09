@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TypewriterText from '../common/TypewriterText';
 import { FaFileAlt, FaHandHoldingHeart, FaCheckCircle, FaClock } from 'react-icons/fa';
 import { Ri24HoursLine } from 'react-icons/ri';
 import { MdMonitor } from 'react-icons/md';
@@ -37,7 +38,7 @@ const Steps = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
@@ -56,38 +57,9 @@ const Steps = () => {
           className="text-4xl md:text-5xl font-bold text-[#003366] mb-8 tracking-tight"
         >
           Start Care for{' '}
-          <motion.span 
-            className="text-[#EA1273] italic relative inline-block"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
-                  delayChildren: 0.5,
-                },
-              },
-            }}
-          >
-            {"Your Parents".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
-            {/* Blinking Cursor */}
-            <motion.span
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ repeat: Infinity, duration: 0.8 }}
-              className="inline-block w-1 h-8 md:h-10 bg-[#EA1273] ml-1 align-middle"
-            />
-          </motion.span>
+          <span className="relative inline-block text-[#EA1273] italic">
+            <TypewriterText text="Your Parents" />
+          </span>
         </motion.h2>
 
         <motion.p 
@@ -113,12 +85,34 @@ const Steps = () => {
               className="flex flex-col items-center"
             >
               {/* Icon Container with Badge */}
-              <div className="relative mb-6">
-                <div className="w-32 h-32 bg-[#003366] rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-105">
-                  {step.icon}
-                </div>
-                <div className="absolute -top-2 -right-4 bg-white px-3 py-1 rounded-full shadow-md border border-gray-100">
-                  <span className="text-[#EA1273] text-xs font-bold whitespace-nowrap">{step.stepNum}</span>
+              <div className="relative mb-6 flex justify-center w-full">
+                <div className="relative w-32 h-32">
+                  <div className="w-full h-full bg-[#003366] rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-105">
+                    {step.icon}
+                  </div>
+                  <div className="absolute -top-2 -right-4 bg-white px-3 py-1 rounded-full shadow-md border border-gray-100">
+                    <span className="text-[#EA1273] text-xs font-bold whitespace-nowrap">{step.stepNum}</span>
+                  </div>
+
+                  {/* Arrow to the next step */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 left-[calc(100%+1.5rem)] xl:left-[calc(100%+2rem)] transform -translate-y-1/2 w-16 xl:w-24">
+                      <motion.div
+                        initial={{ x: 0 }}
+                        animate={{ x: 8 }}
+                        transition={{ 
+                          repeat: Infinity, 
+                          repeatType: "reverse", 
+                          duration: 0.8, 
+                          ease: "easeInOut" 
+                        }}
+                      >
+                        <svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full text-gray-400">
+                          <path d="M0 12H98M98 12L88 2M98 12L88 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </motion.div>
+                    </div>
+                  )}
                 </div>
               </div>
 
