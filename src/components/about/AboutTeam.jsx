@@ -52,7 +52,7 @@ const AboutTeam = () => {
 
   return (
     <section className="py-8 md:py-12 bg-[#F8FAFC] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Medical Experts Section */}
         <div className="text-center mb-8">

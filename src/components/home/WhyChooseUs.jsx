@@ -28,16 +28,16 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-10 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-          {/* Left Image */}
+          {/* Left Image - Positioned right on tablet, left on desktop */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-full flex items-center"
+            className="relative h-full flex items-center order-last md:order-last lg:order-first"
           >
             <div className="rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white ring-1 ring-gray-100">
               <img
@@ -50,13 +50,13 @@ const WhyChooseUs = () => {
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#EA1273]/5 rounded-full blur-3xl"></div>
           </motion.div>
 
-          {/* Right Content */}
+          {/* Right Content - Positioned left on tablet, right on desktop */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:pl-12 flex flex-col justify-center"
+            className="lg:pl-12 flex flex-col justify-center order-first md:order-first lg:order-last"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#EA1273] mb-6 leading-tight tracking-tight">
               Why Choose us

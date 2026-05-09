@@ -48,7 +48,7 @@ const GalleryBanner = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+      <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="flex justify-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#EA1273] tracking-tight min-h-[1.2em] drop-shadow-sm select-none text-center">
             {text}

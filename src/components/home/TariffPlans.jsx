@@ -266,7 +266,7 @@ const TariffPlans = () => {
 
   return (
     <section className="py-12 md:py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

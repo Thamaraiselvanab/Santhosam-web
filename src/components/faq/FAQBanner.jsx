@@ -47,7 +47,7 @@ const FAQBanner = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#EA1273] tracking-tighter min-h-[1.2em] text-center">
             {text}

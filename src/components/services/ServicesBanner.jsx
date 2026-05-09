@@ -46,7 +46,7 @@ const ServicesBanner = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
       
       <div className="absolute inset-0 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#EA1273] tracking-tighter">
               {text}

@@ -5,7 +5,7 @@ import availabilityImg from '../../assets/home/24_7 available.jpeg';
 const Availability = () => {
   return (
     <section className="bg-[#001B3D] overflow-hidden">
-      <div className="flex flex-col md:flex-row items-stretch">
+        <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-stretch">
         
         {/* Left Content */}
         <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-20 lg:pl-[max(2rem,calc((100vw-1280px)/2))] space-y-8 text-left z-10">

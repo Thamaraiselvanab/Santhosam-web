@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#001B3D] text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14">
+      <div className="w-full mx-auto px-6 lg:px-12 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
           {/* Column 1: Logo + Info */}
@@ -113,7 +113,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 text-center text-gray-400 text-sm">
+        <div className="w-full mx-auto px-6 lg:px-12 py-5 text-center text-gray-400 text-sm">
           Copyright © 2026 parentcareindia. Powered by{' '}
           <a href="#" className="text-[#EA1273] hover:underline font-medium">
             Kanavu Startup Village

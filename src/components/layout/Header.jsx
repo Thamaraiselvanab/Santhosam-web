@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-[#F0F7FF] border-b border-gray-100 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}

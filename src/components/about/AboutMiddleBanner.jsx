@@ -28,7 +28,7 @@ const AboutMiddleBanner = () => {
 
         {/* Stats Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="max-w-7xl mx-auto px-4 w-full grid grid-cols-3 gap-4 text-center">
+          <div className="w-full mx-auto px-4 w-full grid grid-cols-3 gap-4 text-center">
             {stats.map((stat, idx) => (
               <motion.div 
                 key={idx}

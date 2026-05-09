@@ -32,7 +32,7 @@ const Feedback = () => {
 
   return (
     <section className="py-8 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           
           {/* Left Side: Image */}
@@ -40,7 +40,7 @@ const Feedback = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl overflow-hidden max-w-md mx-auto lg:mx-0"
+            className="hidden lg:block relative rounded-2xl overflow-hidden max-w-md mx-auto lg:mx-0"
           >
             <img 
               src={feedbackImg} 

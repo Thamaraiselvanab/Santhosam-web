@@ -17,7 +17,7 @@ const AboutBanner = () => {
 
       {/* Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

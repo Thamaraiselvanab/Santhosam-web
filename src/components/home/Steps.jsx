@@ -39,7 +39,7 @@ const Steps = () => {
 
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const Steps = () => {
           proper medication organization, and updated emergency contacts.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 lg:gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -86,7 +86,7 @@ const Steps = () => {
             >
               {/* Icon Container with Badge */}
               <div className="relative mb-6 flex justify-center w-full">
-                <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto mb-6">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-auto">
                   <div className="w-full h-full bg-[#003366] rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-105">
                     {step.icon}
                   </div>
@@ -96,7 +96,7 @@ const Steps = () => {
 
                   {/* Arrow to the next step */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 left-[calc(100%+1.5rem)] xl:left-[calc(100%+2rem)] transform -translate-y-1/2 w-16 xl:w-24">
+                    <div className="hidden md:block absolute top-1/2 left-[calc(100%+0.5rem)] lg:left-[calc(100%+1rem)] transform -translate-y-1/2 w-8 lg:w-16">
                       <motion.div
                         initial={{ x: 0 }}
                         animate={{ x: 8 }}

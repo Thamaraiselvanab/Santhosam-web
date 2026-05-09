@@ -5,7 +5,7 @@ import homeCareImg from '../../assets/services/WhatsApp-Image-2024-10-25-at-4.10
 const ServicesQuality = () => {
   return (
     <section className="py-12 md:py-16 bg-[#E9F0F8] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Image */}
