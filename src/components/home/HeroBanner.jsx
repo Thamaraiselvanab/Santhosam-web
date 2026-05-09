@@ -73,6 +73,7 @@ const HeroBanner = () => {
         </div>
       </div>
     </section>
+    );
 };
 
 export default HeroBanner;
