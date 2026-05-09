@@ -69,7 +69,7 @@ const AboutTeam = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mx-auto mb-16">
           {medicalExperts.map((member, idx) => (
             <motion.div
               key={idx}
@@ -79,13 +79,12 @@ const AboutTeam = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group flex flex-col h-full items-center"
             >
-              <div className="relative w-48 aspect-[3/4] rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white">
+              <div className="relative w-48 h-64 md:hidden xl:block xl:h-80 overflow-hidden mb-6 rounded-full xl:rounded-full shadow-xl border-4 border-white">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/20 to-transparent" />
               </div>
               
               <div className="flex flex-col flex-grow text-center">
@@ -126,13 +125,12 @@ const AboutTeam = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group flex flex-col h-full items-center"
             >
-              <div className="relative w-48 aspect-[3/4] rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white">
+              <div className="relative w-48 h-64 md:hidden xl:block xl:h-80 overflow-hidden mb-6 rounded-full xl:rounded-full shadow-xl border-4 border-white">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/20 to-transparent" />
               </div>
               
               <div className="flex flex-col flex-grow text-center">

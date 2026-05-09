@@ -23,7 +23,7 @@ const AboutIntro = () => {
   return (
     <section className="py-8 md:py-12 bg-white overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-stretch">
           
           {/* Left Content */}
           <motion.div 
@@ -57,9 +57,9 @@ const AboutIntro = () => {
             </p>
           </motion.div>
 
-          {/* Right Animated Images */}
+          {/* Right Animated Images - Hidden on Tablet */}
           <div 
-            className="relative min-h-[350px] lg:h-auto rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 cursor-pointer flex-grow"
+            className="relative hidden xl:flex min-h-[350px] lg:h-auto rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 cursor-pointer flex-grow"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >

@@ -65,7 +65,7 @@ const FounderProfile = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-[280px] aspect-square"
+              className="relative w-full max-w-[280px] aspect-square md:hidden xl:flex"
             >
               {/* Decorative Circle Background */}
               <div className="absolute inset-0 bg-[#FFD700]/10 rounded-full transform translate-x-2 translate-y-2" />

@@ -190,6 +190,17 @@ const Header = () => {
                 ))}
               </div>
 
+              {/* Mobile Contact Link */}
+              <Link
+                to="/contact"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname === '/contact' ? 'text-[#EA1273] bg-pink-50' : 'text-gray-700 hover:text-[#EA1273]'
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
               <div className="pt-4 flex flex-col space-y-2 px-3">
                 <button className="w-full px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-sm bg-[#E3F2FD]">
                   Santhosam
