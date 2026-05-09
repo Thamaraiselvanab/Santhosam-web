@@ -67,7 +67,7 @@ const ServicesGrid = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6 md:gap-x-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-6 md:gap-x-8 max-w-5xl mx-auto">
           {services.map((service, idx) => (
             <motion.div
               key={idx}

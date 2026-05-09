@@ -226,21 +226,27 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
       </ul>
 
       {/* Actions */}
-      <div className="flex flex-col gap-3 items-center mt-auto">
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="w-full py-2.5 px-4 rounded-full text-sm font-bold text-white shadow-md cursor-pointer hover:-translate-y-0.5 hover:shadow-lg transition-all border-none bg-[#EA1273]"
-        >
-          {expanded ? 'Read Less' : 'Read More'}
-        </button>
+      <div className="flex flex-col-reverse gap-3 items-center mt-auto">
         <a
           href="https://parentcaresanthosam.com/enquiry/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full text-center py-2.5 px-4 rounded-full text-sm font-bold text-white shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all bg-[#EA1273]"
+          className="w-[85%] text-center py-2 px-4 rounded-full text-sm font-bold text-white shadow-md hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-lg transition-all"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, #ff4b8a 0%, #ff6299 35%, #ff7fb0 70%, #ff9bc4 100%)',
+          }}
         >
           Enquiry
         </a>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="w-[140px] py-2 px-4 rounded-full text-sm font-bold text-white shadow-md cursor-pointer hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-lg transition-all border-none"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, #ff4b8a 0%, #ff6299 35%, #ff7fb0 70%, #ff9bc4 100%)',
+          }}
+        >
+          {expanded ? 'Read Less' : 'Read More'}
+        </button>
       </div>
     </motion.div>
   );
@@ -259,7 +265,7 @@ const TariffPlans = () => {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-white relative">
+    <section className="py-12 md:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div

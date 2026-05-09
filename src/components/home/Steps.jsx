@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TypewriterText from '../common/TypewriterText';
-import { HiDocumentText, HiOutlineClock, HiInboxArrowDown, HiCheckBadge } from 'react-icons/hi2';
+import { FaFileAlt, FaHandHoldingHeart, FaCheckCircle, FaClock } from 'react-icons/fa';
+import { Ri24HoursLine } from 'react-icons/ri';
+import { MdMonitor } from 'react-icons/md';
 
 const Steps = () => {
   const steps = [
@@ -9,34 +11,34 @@ const Steps = () => {
       id: 1,
       title: 'Enquiry Form',
       description: 'Please Fill the Enquiry Form.',
-      icon: <HiDocumentText className="text-4xl text-[#EA1273]" />,
+      icon: <FaFileAlt className="text-3xl text-[#EA1273]" />,
       stepNum: 'Step 1'
     },
     {
       id: 2,
       title: 'Response',
       description: 'Santhosam advisor gets in touch within 24 hrs.',
-      icon: <HiOutlineClock className="text-4xl text-[#EA1273]" />,
+      icon: <Ri24HoursLine className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 2'
     },
     {
       id: 3,
       title: 'Onboarding Package',
       description: "You'll receive onboarding guidelines and payment information.",
-      icon: <HiInboxArrowDown className="text-4xl text-[#EA1273]" />,
+      icon: <FaHandHoldingHeart className="text-3xl text-[#EA1273]" />,
       stepNum: 'Step 3'
     },
     {
       id: 4,
       title: 'Activated',
       description: 'Service activation is now complete.',
-      icon: <HiCheckBadge className="text-4xl text-[#EA1273]" />,
+      icon: <MdMonitor className="text-4xl text-[#EA1273]" />,
       stepNum: 'Step 4'
     }
   ];
 
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
@@ -72,7 +74,7 @@ const Steps = () => {
           proper medication organization, and updated emergency contacts.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -84,7 +86,7 @@ const Steps = () => {
             >
               {/* Icon Container with Badge */}
               <div className="relative mb-6 flex justify-center w-full">
-                <div className="relative w-32 h-32">
+                <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto mb-6">
                   <div className="w-full h-full bg-[#003366] rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-105">
                     {step.icon}
                   </div>
@@ -94,7 +96,7 @@ const Steps = () => {
 
                   {/* Arrow to the next step */}
                   {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 left-[calc(100%+1.5rem)] xl:left-[calc(100%+2rem)] transform -translate-y-1/2 w-16 xl:w-24">
+                    <div className="hidden md:block absolute top-1/2 left-[calc(100%+1.5rem)] xl:left-[calc(100%+2rem)] transform -translate-y-1/2 w-16 xl:w-24">
                       <motion.div
                         initial={{ x: 0 }}
                         animate={{ x: 8 }}

@@ -15,20 +15,13 @@ const Partners = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Account Details Button */}
-        <div className="flex justify-center mb-10">
-          <button className="bg-[#003366] text-white px-6 py-2 rounded-md font-bold text-xs hover:bg-[#002244] transition-all shadow-md">
-            Account Details
-          </button>
-        </div>
-
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-[#EA1273] mb-10 tracking-tight"
+          className="text-4xl md:text-5xl font-bold text-[#EA1273] mb-12 tracking-tight"
         >
           Our Partners
         </motion.h2>

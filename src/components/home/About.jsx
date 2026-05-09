@@ -21,9 +21,9 @@ const About = () => {
   ];
 
   return (
-    <section className="py-8 md:py-12 bg-gray-50">
+    <section className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
           
           {/* Left Content */}
           <motion.div
@@ -31,7 +31,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 lg:pl-12 lg:pr-4 flex flex-col justify-between"
+            className="md:col-span-7 md:pl-6 lg:pl-12 lg:pr-4 flex flex-col justify-between"
           >
             <div>
               <span className="text-[#EA1273] font-bold text-xs mb-2 block tracking-widest uppercase">Who We Are</span>
@@ -88,7 +88,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 space-y-6 flex flex-col justify-center"
+            className="md:col-span-5 space-y-6 flex flex-col justify-center"
           >
             <div className="relative rounded-2xl overflow-hidden group max-w-md mx-auto">
               <img 
