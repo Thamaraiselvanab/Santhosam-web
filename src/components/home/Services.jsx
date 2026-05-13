@@ -30,7 +30,7 @@ const Services = () => {
           Our <span className="text-[#EA1273] italic"><TypewriterText text="Services" /></span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.id}

@@ -12,13 +12,13 @@ const Footer = () => {
 
           {/* Column 1: Logo + Info */}
           <div className="flex flex-col gap-5">
-            <div className="bg-white rounded-lg p-3 w-fit">
+            <Link to="/" className="bg-white rounded-lg p-3 w-fit block">
               <img
                 src="/footerlogo.webp"
                 alt="Santhosam Parent Care India Logo"
-                className="h-14 w-auto object-contain"
+                className="h-14 w-auto object-contain cursor-pointer"
               />
-            </div>
+            </Link>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               Feel free to reach out to us for any queries or assistance. We're here to help you!
             </p>
@@ -115,8 +115,8 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="w-full mx-auto px-6 lg:px-12 py-5 text-center text-gray-400 text-sm">
           Copyright © 2026 parentcareindia. Powered by{' '}
-          <a href="#" className="text-[#EA1273] hover:underline font-medium">
-            Kanavu Startup Village
+          <a href="https://kanavu.org" target="_blank" rel="noopener noreferrer" className="text-[#EA1273] hover:underline font-medium">
+            Kanavu Technologies
           </a>
         </div>
       </div>

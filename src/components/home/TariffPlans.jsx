@@ -134,7 +134,7 @@ const cauveryInfo = {
 const FeatureNote = ({ feature, onHoverLink, onLeaveLink }) => {
   if (!feature.note && !feature.link) return null;
   return (
-    <p className="text-[13px] text-gray-700 font-semibold ml-6 mt-[-2px] mb-1 leading-snug">
+    <p className="text-[13px] text-gray-700 font-semibold ml-6 mt-[-2px] mb-0.5 leading-snug">
       {feature.note}
       {feature.link && (
         <a
@@ -154,8 +154,7 @@ const FeatureNote = ({ feature, onHoverLink, onLeaveLink }) => {
 };
 
 /* ───────── Single Plan Card ───────── */
-const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
-  const [expanded, setExpanded] = useState(false);
+const PlanCard = ({ plan, index, isExpanded, onToggle, onHoverLink, onLeaveLink }) => {
 
   return (
     <motion.div
@@ -163,7 +162,7 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative rounded-2xl p-6 pb-8 shadow-lg text-left flex flex-col overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 min-h-[520px]"
+      className={`relative rounded-2xl p-5 pb-6 shadow-lg text-left flex flex-col overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 ${isExpanded ? 'h-auto' : 'min-h-[440px]'}`}
       style={{ backgroundImage: plan.gradient }}
     >
       {/* Badge */}
@@ -175,25 +174,25 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
 
       {/* Title */}
       <h3
-        className="text-[42px] leading-tight font-bold mb-2 tracking-tight"
+        className="text-[32px] leading-tight font-bold mb-1 tracking-tight"
         style={{ color: plan.titleColor, textShadow: '0 1px 0 rgba(255,255,255,0.4)' }}
       >
         {plan.name}
       </h3>
 
-      <p className="text-[15px] text-gray-900 font-bold mb-2">{plan.subtitle}</p>
+      <p className="text-[14px] text-gray-900 font-bold mb-1 min-h-[40px] flex items-center">{plan.subtitle}</p>
 
-      <p className="text-[38px] font-bold text-gray-900 mb-3 leading-tight">
+      <p className="text-[32px] font-bold text-gray-900 mb-2 leading-tight">
         {plan.price}
-        <span className="text-[15px] font-bold text-gray-800">{plan.period}</span>
+        <span className="text-[14px] font-bold text-gray-800">{plan.period}</span>
       </p>
 
       {/* Base Features */}
       <ul className="list-none p-0 mb-4 flex-1">
         {plan.features.map((f, i) => (
           <li key={i}>
-            <div className="relative pl-6 text-[16px] leading-relaxed font-bold text-gray-900 mb-2">
-              <FaCheck className="absolute left-0 top-1 text-[12px] text-black" />
+            <div className="relative pl-6 text-[15px] leading-relaxed font-bold text-gray-900 mb-1">
+              <FaCheck className="absolute left-0 top-1 text-[11px] text-black" />
               {f.text}
             </div>
             <FeatureNote feature={f} onHoverLink={onHoverLink} onLeaveLink={onLeaveLink} />
@@ -201,10 +200,10 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
         ))}
 
         {/* Expanded Features */}
-        {expanded && plan.extraFeatures.map((f, i) => (
+        {isExpanded && plan.extraFeatures.map((f, i) => (
           <li key={`extra-${i}`}>
-            <div className="relative pl-6 text-[16px] leading-relaxed font-bold text-gray-900 mb-2">
-              <FaCheck className="absolute left-0 top-1 text-[12px] text-black" />
+            <div className="relative pl-6 text-[15px] leading-relaxed font-bold text-gray-900 mb-1">
+              <FaCheck className="absolute left-0 top-1 text-[11px] text-black" />
               {f.text}
               {f.link && !f.text && (
                 <a
@@ -226,7 +225,7 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
       </ul>
 
       {/* Actions */}
-      <div className="flex flex-col-reverse gap-3 items-center mt-auto">
+      <div className="flex flex-col-reverse gap-2 items-center mt-auto">
         <a
           href="https://parentcaresanthosam.com/enquiry/"
           target="_blank"
@@ -239,13 +238,13 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
           Enquiry
         </a>
         <button
-          onClick={() => setExpanded(!expanded)}
+          onClick={onToggle}
           className="w-[140px] py-2 px-4 rounded-full text-sm font-bold text-white shadow-md cursor-pointer hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-lg transition-all border-none"
           style={{
             backgroundImage: 'linear-gradient(135deg, #ff4b8a 0%, #ff6299 35%, #ff7fb0 70%, #ff9bc4 100%)',
           }}
         >
-          {expanded ? 'Read Less' : 'Read More'}
+          {isExpanded ? 'Read Less' : 'Read More'}
         </button>
       </div>
     </motion.div>
@@ -255,6 +254,7 @@ const PlanCard = ({ plan, index, onHoverLink, onLeaveLink }) => {
 /* ───────── Main Section ───────── */
 const TariffPlans = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [expandedId, setExpandedId] = useState(null);
 
   const handleHoverLink = () => {
     setShowPopup(true);
@@ -292,6 +292,8 @@ const TariffPlans = () => {
               key={plan.id}
               plan={plan}
               index={i}
+              isExpanded={expandedId === plan.id}
+              onToggle={() => setExpandedId(expandedId === plan.id ? null : plan.id)}
               onHoverLink={handleHoverLink}
               onLeaveLink={handleLeaveLink}
             />

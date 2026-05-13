@@ -33,13 +33,13 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <Link to="/" className="flex-shrink-0 flex items-center">
             <img 
               src={logo} 
               alt="Parent Care India" 
-              className="h-12 md:h-14 w-auto"
+              className="h-12 md:h-14 w-auto cursor-pointer"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -133,12 +133,22 @@ const Header = () => {
 
             {/* Action Buttons - Now visible on tablet (md) */}
             <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-              <button className="px-4 lg:px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-xs lg:text-sm bg-[#E3F2FD] hover:bg-white transition-all shadow-sm whitespace-nowrap">
+              <a 
+                href="https://parentcaresanthosam.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-4 lg:px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-xs lg:text-sm bg-[#E3F2FD] hover:bg-white transition-all shadow-sm whitespace-nowrap"
+              >
                 Santhosam
-              </button>
-              <button className="px-4 lg:px-6 py-2 rounded-md bg-[#EA1273] text-white font-bold text-xs lg:text-sm hover:bg-[#D41068] transition-all shadow-md whitespace-nowrap">
+              </a>
+              <a 
+                href="https://parentcaresanthosam.com/enquiry/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-4 lg:px-6 py-2 rounded-md bg-[#EA1273] text-white font-bold text-xs lg:text-sm hover:bg-[#D41068] transition-all shadow-md whitespace-nowrap"
+              >
                 Enquiry
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -202,12 +212,22 @@ const Header = () => {
               </Link>
 
               <div className="pt-4 flex flex-col space-y-2 px-3">
-                <button className="w-full px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-sm bg-[#E3F2FD]">
+                <a 
+                  href="https://parentcaresanthosam.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-2 rounded-md border-2 border-[#EA1273] text-[#003366] font-bold text-sm bg-[#E3F2FD] text-center"
+                >
                   Santhosam
-                </button>
-                <button className="w-full px-6 py-2 rounded-md bg-[#EA1273] text-white font-bold text-sm">
+                </a>
+                <a 
+                  href="https://parentcaresanthosam.com/enquiry/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-2 rounded-md bg-[#EA1273] text-white font-bold text-sm text-center"
+                >
                   Enquiry
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
