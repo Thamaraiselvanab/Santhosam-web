@@ -10,6 +10,8 @@ const AboutBanner = () => {
         src={bannerImg} 
         alt="About Us Banner" 
         className="w-full h-full object-cover"
+        loading="eager"
+        decoding="async"
       />
       
       {/* Overlay for better text readability (optional, but good practice) */}

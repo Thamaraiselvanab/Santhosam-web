@@ -95,6 +95,8 @@ const About = () => {
                 src={img1} 
                 alt="Elderly couple" 
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="relative rounded-2xl overflow-hidden group max-w-md mx-auto">
@@ -102,6 +104,8 @@ const About = () => {
                 src={img2} 
                 alt="Daughter helping father" 
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

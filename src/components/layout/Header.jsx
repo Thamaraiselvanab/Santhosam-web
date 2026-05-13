@@ -7,6 +7,7 @@ import logo from '../../assets/Santhosham-Logo-scaled.png';
 const Header = () => {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -38,6 +39,8 @@ const Header = () => {
               src={logo} 
               alt="Parent Care India" 
               className="h-12 md:h-14 w-auto cursor-pointer"
+              loading="eager"
+              decoding="async"
             />
           </Link>
 
@@ -124,7 +127,10 @@ const Header = () => {
             {/* Mobile menu button - positioned to the left of buttons on tablet as per screenshot */}
             <div className="lg:hidden flex items-center">
               <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                onClick={() => {
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
+                  if (isMobileMenuOpen) setIsMobileResourcesOpen(false);
+                }}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#EA1273] focus:outline-none"
               >
                 {isMobileMenuOpen ? <HiXMark className="w-6 h-6" /> : <HiBars3 className="w-6 h-6" />}
@@ -176,29 +182,52 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="px-3 py-2 text-base font-medium text-gray-700">Resources</div>
-              <div className="pl-6 space-y-1">
-                {resourceLinks.map((item) => (
-                  item.path.startsWith('/') ? (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <a
-                      key={item.name}
-                      href={item.path}
-                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
-                    >
-                      {item.name}
-                    </a>
-                  )
-                ))}
-              </div>
+              <button 
+                onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
+                className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-[#EA1273] transition-colors"
+              >
+                Resources
+                <HiChevronDown className={`w-4 h-4 transition-transform ${isMobileResourcesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {isMobileResourcesOpen && (
+                  <motion.div 
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="pl-6 space-y-1 overflow-hidden"
+                  >
+                    {resourceLinks.map((item) => (
+                      item.path.startsWith('/') ? (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileResourcesOpen(false);
+                          }}
+                        >
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <a
+                          key={item.name}
+                          href={item.path}
+                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-[#EA1273]"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileResourcesOpen(false);
+                          }}
+                        >
+                          {item.name}
+                        </a>
+                      )
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Mobile Contact Link */}
               <Link

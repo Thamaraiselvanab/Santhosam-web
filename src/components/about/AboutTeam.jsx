@@ -84,6 +84,8 @@ const AboutTeam = () => {
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ease-out"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               
@@ -130,6 +132,8 @@ const AboutTeam = () => {
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ease-out"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               

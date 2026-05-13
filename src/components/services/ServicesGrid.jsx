@@ -90,6 +90,8 @@ const ServicesGrid = () => {
                   src={service.image} 
                   alt={service.title} 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

@@ -17,6 +17,8 @@ const Footer = () => {
                 src="/footerlogo.webp"
                 alt="Santhosam Parent Care India Logo"
                 className="h-14 w-auto object-contain cursor-pointer"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">

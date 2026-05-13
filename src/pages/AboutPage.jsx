@@ -9,7 +9,7 @@ import AboutTeam from '../components/about/AboutTeam';
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-800 selection:bg-pink-50 selection:text-[#EA1273] font-sans">
+    <div className="min-h-screen bg-white text-gray-800 selection:bg-pink-50 selection:text-[#EA1273] font-sans overflow-x-hidden">
       <Header />
       
       <main>
