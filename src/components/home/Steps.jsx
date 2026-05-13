@@ -38,13 +38,13 @@ const Steps = () => {
   ];
 
   return (
-    <section className="py-10 bg-white">
-      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 text-center">
+    <section className="py-6 md:py-8 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[#EA1273] font-semibold mb-2"
+          className="text-[#EA1273] text-[13px] font-semibold mb-1"
         >
           In 4 simple steps
         </motion.p>
@@ -54,7 +54,7 @@ const Steps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold text-[#003366] mb-8 tracking-tight"
+          className="text-4xl md:text-5xl font-bold text-[#003366] mb-4 tracking-tight"
         >
           Start Care for{' '}
           <span className="relative inline-block text-[#EA1273] italic">
@@ -67,14 +67,13 @@ const Steps = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-3xl mx-auto text-gray-500 text-sm mb-16 leading-relaxed font-medium"
+          className="max-w-2xl mx-auto text-gray-500 text-sm mb-8 leading-relaxed font-medium"
         >
           Begin by assessing your parents' health and daily needs, including medication, mobility, and safety. 
-          As part of planning for elder care services, create a simple home plan with routine schedules, 
-          proper medication organization, and updated emergency contacts.
+          As part of planning for elder care services, create a simple home plan with routine schedules.
         </motion.p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-2 lg:gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -85,30 +84,32 @@ const Steps = () => {
               className="flex flex-col items-center"
             >
               {/* Icon Container with Badge */}
-              <div className="relative mb-6 flex justify-center w-full">
-                <div className="relative w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-auto">
-                  <div className="w-full h-full bg-[#003366] rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-105">
-                    {step.icon}
+              <div className="relative mb-4 flex justify-center w-full">
+                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 mx-auto">
+                  <div className="w-full h-full bg-[#003366] rounded-full flex items-center justify-center shadow-md transform transition-transform hover:scale-105">
+                    <div className="scale-75 md:scale-90 lg:scale-100">
+                      {step.icon}
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-4 bg-white px-3 py-1 rounded-full shadow-md border border-gray-100">
-                    <span className="text-[#EA1273] text-xs font-bold whitespace-nowrap">{step.stepNum}</span>
+                  <div className="absolute -top-1 -right-3 bg-white px-2 py-0.5 rounded-full shadow-sm border border-gray-100">
+                    <span className="text-[#EA1273] text-[9px] font-bold whitespace-nowrap">{step.stepNum}</span>
                   </div>
 
                   {/* Arrow to the next step */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 left-[calc(100%+0.5rem)] lg:left-[calc(100%+1rem)] transform -translate-y-1/2 w-8 lg:w-16">
+                    <div className="hidden md:block absolute top-1/2 left-[calc(100%+0.25rem)] lg:left-[calc(100%+0.5rem)] transform -translate-y-1/2 w-6 lg:w-10">
                       <motion.div
                         initial={{ x: 0 }}
-                        animate={{ x: 8 }}
+                        animate={{ x: 4 }}
                         transition={{ 
                           repeat: Infinity, 
                           repeatType: "reverse", 
-                          duration: 0.8, 
+                          duration: 0.4, 
                           ease: "easeInOut" 
                         }}
                       >
-                        <svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full text-gray-400">
-                          <path d="M0 12H98M98 12L88 2M98 12L88 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full text-gray-600">
+                          <path d="M0 12H98M98 12L88 2M98 12L88 22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </motion.div>
                     </div>
@@ -116,8 +117,8 @@ const Steps = () => {
                 </div>
               </div>
 
-              <h3 className="text-lg font-bold text-[#003366] mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-[13px]">{step.description}</p>
+              <h3 className="text-lg font-bold text-[#003366] mb-1">{step.title}</h3>
+              <p className="text-gray-500 text-xs px-2">{step.description}</p>
             </motion.div>
           ))}
         </div>

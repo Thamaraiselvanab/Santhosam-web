@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import imgHealth from '../../assets/services/Untitled-design-2025-09-10T120414.055.png';
+import { Link } from 'react-router-dom';
+import imgHealth from '../../assets/services/WhatsApp-Image-2025-05-07-at-10.59.45-AM-re5jdlgn9fcuaqoh9syriljotbaydly3365ytixt3o (1).jpeg';
 import imgProperty from '../../assets/services/Untitled-design-17.png';
 import imgLegal from '../../assets/services/Untitled-design-20.png';
 import imgBanking from '../../assets/services/Your-paragraph-text.png';
@@ -12,38 +13,44 @@ const ServicesGrid = () => {
     {
       title: "Health Care",
       desc: "Providing complete medical support with home healthcare services, routine check-ups, and personalized medication management to ensure your loved ones stay healthy and cared for",
-      image: imgHealth
+      image: imgHealth,
+      link: "/health-care/"
     },
     {
       title: "Property Management & New Construction",
       desc: "Ensuring property maintenance and assisting with new construction projects to ensure your parents’ living spaces are well-managed and their needs are met.",
-      image: imgProperty
+      image: imgProperty,
+      link: "/value-added-property-management/"
     },
     {
       title: "Legal Services",
-      desc: "Providing support with legal documentation, property matters, and safeguarding parents’ legal rights and needs.",
-      image: imgLegal
+      desc: "Providing reliable legal support and essential documentation assistance for your parents, ensuring their legal interests are fully protected with expert care.",
+      image: imgLegal,
+      link: "/legal-services/"
     },
     {
       title: "Banking & Investment",
       desc: "Offering assistance with managing finances, banking needs, and investment planning to ensure a secure and stress-free future.",
-      image: imgBanking
+      image: imgBanking,
+      link: "/banking-and-investment/"
     },
     {
       title: "Travel Services",
       desc: "Organizing travel plans, including transportation and accommodation, to ensure your parents have safe, comfortable, and hassle-free journeys.",
-      image: imgTravel
+      image: imgTravel,
+      link: "/travel-services/"
     },
     {
       title: "Communication with Family",
       desc: "Ensuring regular updates and enabling easy, meaningful connections between elderly parents and their families, no matter the distance.",
-      image: imgComm
+      image: imgComm,
+      link: "/family-communication/"
     }
   ];
 
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center mb-10">
@@ -67,7 +74,7 @@ const ServicesGrid = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-6 md:gap-x-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6 md:gap-x-8 max-w-7xl mx-auto">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -94,13 +101,15 @@ const ServicesGrid = () => {
                 <p className="text-gray-300 text-[11px] md:text-[12px] leading-relaxed mb-4 flex-grow">
                   {service.desc}
                 </p>
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#EA1273] hover:bg-[#D41068] text-white font-bold py-2 px-5 rounded-lg text-[11px] transition-colors shadow-md"
-                >
-                  View More
-                </motion.button>
+                <Link to={service.link}>
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#EA1273] hover:bg-[#D41068] text-white font-bold py-2 px-5 rounded-lg text-[11px] transition-colors shadow-md"
+                  >
+                    View More
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}

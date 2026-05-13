@@ -79,7 +79,7 @@ const AboutTeam = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group flex flex-col h-full items-center"
             >
-              <div className="relative w-48 h-64 md:hidden xl:block xl:h-80 overflow-hidden mb-6 rounded-full xl:rounded-full shadow-xl border-4 border-white">
+              <div className="relative w-48 h-64 lg:h-72 xl:h-80 overflow-hidden mb-6 rounded-full shadow-xl border-4 border-white">
                 <img 
                   src={member.image} 
                   alt={member.name} 
@@ -125,7 +125,7 @@ const AboutTeam = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group flex flex-col h-full items-center"
             >
-              <div className="relative w-48 h-64 md:hidden xl:block xl:h-80 overflow-hidden mb-6 rounded-full xl:rounded-full shadow-xl border-4 border-white">
+              <div className="relative w-48 h-64 lg:h-72 xl:h-80 overflow-hidden mb-6 rounded-full shadow-xl border-4 border-white">
                 <img 
                   src={member.image} 
                   alt={member.name} 
